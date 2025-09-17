@@ -757,4 +757,376 @@
                         <ul class="quiz-options">
                             <li onclick="checkQuizAnswer(this, false)">Replace teacher decision-making with AI</li>
                             <li onclick="checkQuizAnswer(this, true)">Use AI to enhance teaching while maintaining human oversight</li>
-                            <li
+                            <li onclick="checkQuizAnswer(this, false)">Allow students unlimited access to any AI tool</li>
+                            <li onclick="checkQuizAnswer(this, false)">Avoid AI completely in educational settings</li>
+                        </ul>
+                    </div>
+
+                    <div class="quiz-question">
+                        <p><strong>Question 4:</strong> What is a key characteristic of effective AI prompts?</p>
+                        <ul class="quiz-options">
+                            <li onclick="checkQuizAnswer(this, false)">They should be as short as possible</li>
+                            <li onclick="checkQuizAnswer(this, true)">They should be specific and provide clear context</li>
+                            <li onclick="checkQuizAnswer(this, false)">They should use technical jargon</li>
+                            <li onclick="checkQuizAnswer(this, false)">They should be identical for all use cases</li>
+                        </ul>
+                    </div>
+
+                    <div id="quiz-results" style="margin-top: 20px; padding: 20px; background: #f8f9fa; border-radius: 10px; display: none;">
+                        <h4 id="results-title"></h4>
+                        <p id="results-message"></p>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quiz-progress"></div>
+                        </div>
+                    </div>
+
+                    <button class="btn" onclick="submitQuiz()" id="submit-quiz" style="display: none;">Submit Quiz</button>
+                </div>
+
+                <div class="interactive-element">
+                    <h4>💭 Reflection Questions</h4>
+                    <p>Consider these questions and jot down your thoughts:</p>
+                    <ul>
+                        <li>How might AI tools enhance your specific teaching or support role?</li>
+                        <li>What concerns do you have about implementing AI in your work?</li>
+                        <li>What steps will you take to stay informed about AI developments?</li>
+                    </ul>
+                    <textarea placeholder="Share your reflections here..." style="width: 100%; height: 120px; margin: 10px 0; padding: 10px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                    <button class="btn" onclick="saveReflections()">Save Reflections</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resources Section -->
+        <section class="content-section" id="resources">
+            <div class="section-header">
+                <span class="section-icon">📖</span>
+                <h1 class="section-title">Resources & Next Steps</h1>
+                <span class="duration-badge">2 minutes</span>
+            </div>
+            <div class="content-body">
+                <div class="highlight-box">
+                    <h4>🎉 Congratulations!</h4>
+                    <p>You've completed the AI Foundations training. Use these resources to continue your learning journey and implement AI tools effectively in your educational practice.</p>
+                </div>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h5>🛠️ District-Approved Tools</h5>
+                        <p>Check with your technology department for the most current list of approved AI tools and platforms.</p>
+                        <button class="btn" onclick="alert('Contact your tech department for the latest approved tools list.')">Get Tool List</button>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h5>📚 Further Reading</h5>
+                        <ul style="font-size: 0.9em; margin-top: 10px;">
+                            <li>AI in Education: Best Practices Guide</li>
+                            <li>Digital Privacy for Educators</li>
+                            <li>Ethical AI Implementation Framework</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h5>🎓 Professional Development</h5>
+                        <ul style="font-size: 0.9em; margin-top: 10px;">
+                            <li>Advanced AI Applications Workshop</li>
+                            <li>AI Ethics in Education Seminar</li>
+                            <li>Hands-on AI Tools Training</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h5>🤝 Support & Community</h5>
+                        <ul style="font-size: 0.9em; margin-top: 10px;">
+                            <li>AI Implementation Support Team</li>
+                            <li>Educator AI Community Forum</li>
+                            <li>Monthly AI Office Hours</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="interactive-element">
+                    <h4>📋 Action Planning</h4>
+                    <p>Based on what you've learned, what are your next steps?</p>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <label><strong>Short-term goals (1-2 weeks):</strong></label>
+                            <textarea placeholder="What will you do in the next 1-2 weeks?" style="width: 100%; height: 60px; margin: 5px 0; padding: 8px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                        </div>
+                        <div>
+                            <label><strong>Long-term goals (1-3 months):</strong></label>
+                            <textarea placeholder="What are your longer-term AI integration goals?" style="width: 100%; height: 60px; margin: 5px 0; padding: 8px; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="saveActionPlan()">Save Action Plan</button>
+                </div>
+
+                <div class="interactive-element">
+                    <h4>📞 Contact Information</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                        <div>
+                            <strong>Technical Support:</strong><br>
+                            📧 tech-support@district.edu<br>
+                            📞 (555) 123-4567
+                        </div>
+                        <div>
+                            <strong>Instructional Support:</strong><br>
+                            📧 instruction@district.edu<br>
+                            📞 (555) 123-4568
+                        </div>
+                        <div>
+                            <strong>AI Training Coordinator:</strong><br>
+                            📧 ai-training@district.edu<br>
+                            📞 (555) 123-4569
+                        </div>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="text-align: center; margin-top: 30px;">
+                    <h4>🌟 Thank You for Completing the Training!</h4>
+                    <p>Remember: AI is a powerful tool that can enhance education when used thoughtfully, ethically, and in alignment with your pedagogical goals.</p>
+                    <button class="btn" onclick="generateCertificate()">Generate Completion Certificate</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Navigation and progress tracking
+        let completedSections = new Set();
+        let currentSection = 'welcome';
+        let quizAnswers = [];
+        let quizScore = 0;
+
+        // Toggle sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('open');
+        }
+
+        // Show section and update navigation
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+
+            // Update navigation
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            event.target.classList.add('active');
+
+            // Mark previous section as completed
+            if (currentSection && currentSection !== sectionId) {
+                completedSections.add(currentSection);
+            }
+            currentSection = sectionId;
+
+            // Update progress
+            updateProgress();
+
+            // Close sidebar on mobile
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Update progress bar
+        function updateProgress() {
+            const totalSections = 8;
+            const progress = (completedSections.size / totalSections) * 100;
+            document.getElementById('progress-fill').style.width = progress + '%';
+        }
+
+        // Handle quiz answers
+        function checkAnswer(element, isCorrect) {
+            const options = element.parentNode.querySelectorAll('li');
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option === element) {
+                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                } else if (isCorrect === false && option.textContent.includes('❌')) {
+                    option.classList.add('correct');
+                }
+            });
+        }
+
+        // Handle quiz questions
+        function checkQuizAnswer(element, isCorrect) {
+            const questionDiv = element.closest('.quiz-question');
+            const options = questionDiv.querySelectorAll('li');
+            
+            // Disable all options
+            options.forEach(option => {
+                option.style.pointerEvents = 'none';
+                if (option === element) {
+                    option.classList.add(isCorrect ? 'correct' : 'incorrect');
+                    quizAnswers.push(isCorrect);
+                    if (isCorrect) quizScore++;
+                }
+            });
+
+            // Show correct answer if wrong answer was selected
+            if (!isCorrect) {
+                options.forEach(option => {
+                    if (option.onclick.toString().includes('true')) {
+                        option.classList.add('correct');
+                    }
+                });
+            }
+
+            // Check if all questions are answered
+            if (quizAnswers.length === 4) {
+                document.getElementById('submit-quiz').style.display = 'inline-block';
+            }
+        }
+
+        // Submit quiz and show results
+        function submitQuiz() {
+            const percentage = (quizScore / 4) * 100;
+            const resultsDiv = document.getElementById('quiz-results');
+            const titleElement = document.getElementById('results-title');
+            const messageElement = document.getElementById('results-message');
+            const progressElement = document.getElementById('quiz-progress');
+
+            let title, message, color;
+            
+            if (percentage >= 80) {
+                title = '🎉 Excellent Work!';
+                message = `You scored ${quizScore}/4 (${percentage}%). You have a strong understanding of AI foundations for K-12 education.`;
+                color = '#27ae60';
+            } else if (percentage >= 60) {
+                title = '👍 Good Job!';
+                message = `You scored ${quizScore}/4 (${percentage}%). Consider reviewing the areas where you missed questions.`;
+                color = '#f39c12';
+            } else {
+                title = '📚 Keep Learning!';
+                message = `You scored ${quizScore}/4 (${percentage}%). We recommend reviewing the course materials and retaking the quiz.`;
+                color = '#e74c3c';
+            }
+
+            titleElement.textContent = title;
+            messageElement.textContent = message;
+            progressElement.style.width = percentage + '%';
+            progressElement.style.background = `linear-gradient(90deg, ${color}, ${color}dd)`;
+            
+            resultsDiv.style.display = 'block';
+            document.getElementById('submit-quiz').style.display = 'none';
+        }
+
+        // Save assessment
+        function recordAssessment() {
+            const selected = document.querySelector('input[name="knowledge"]:checked');
+            if (selected) {
+                alert(`Assessment recorded: ${selected.value.charAt(0).toUpperCase() + selected.value.slice(1)} level`);
+            } else {
+                alert('Please select your current knowledge level.');
+            }
+        }
+
+        // Analyze prompt
+        function analyzePrompt() {
+            const promptText = document.querySelector('#applications textarea').value.trim();
+            const feedbackDiv = document.getElementById('prompt-feedback');
+            const feedbackText = document.getElementById('feedback-text');
+
+            if (!promptText) {
+                feedbackText.textContent = 'Please write a prompt first.';
+                feedbackDiv.style.display = 'block';
+                return;
+            }
+
+            let feedback = '✅ Prompt Analysis:\n\n';
+            let score = 0;
+
+            // Check for specificity
+            if (promptText.length > 50) {
+                feedback += '• Good length and detail\n';
+                score++;
+            } else {
+                feedback += '• Consider adding more specific details\n';
+            }
+
+            // Check for context
+            if (promptText.toLowerCase().includes('student') || promptText.toLowerCase().includes('grade') || promptText.toLowerCase().includes('subject')) {
+                feedback += '• Includes educational context\n';
+                score++;
+            } else {
+                feedback += '• Consider adding educational context (grade level, subject, etc.)\n';
+            }
+
+            // Check for desired format
+            if (promptText.toLowerCase().includes('list') || promptText.toLowerCase().includes('question') || promptText.toLowerCase().includes('activity')) {
+                feedback += '• Specifies desired format\n';
+                score++;
+            } else {
+                feedback += '• Consider specifying the desired format or output type\n';
+            }
+
+            feedback += `\nOverall Score: ${score}/3 `;
+            feedback += score >= 2 ? '(Good prompt!)' : '(Could be improved)';
+
+            feedbackText.textContent = feedback;
+            feedbackDiv.style.display = 'block';
+        }
+
+        // Save functions (placeholder implementations)
+        function saveReflection() {
+            alert('Reflection saved! Thank you for your thoughtful response.');
+        }
+
+        function saveReflections() {
+            alert('Reflections saved! These will help guide your AI implementation journey.');
+        }
+
+        function saveActionPlan() {
+            alert('Action plan saved! We recommend sharing this with your instructional coach or supervisor.');
+        }
+
+        // Generate certificate
+        function generateCertificate() {
+            const userName = prompt('Enter your name for the certificate:') || 'Participant';
+            const date = new Date().toLocaleDateString();
+            
+            alert(`🎓 Certificate of Completion\n\nThis certifies that ${userName} has successfully completed the AI Foundations for K-12 Educators training on ${date}.\n\n(In a real implementation, this would generate a downloadable PDF certificate)`);
+        }
+
+        // Keyboard navigation support
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                document.getElementById('sidebar').classList.remove('open');
+            }
+        });
+
+        // Handle nav links with keyboard
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Auto-close sidebar when clicking outside on mobile
+        document.addEventListener('click', function(e) {
+            const sidebar = document.getElementById('sidebar');
+            const toggle = document.querySelector('.sidebar-toggle');
+            
+            if (!sidebar.contains(e.target) && e.target !== toggle && window.innerWidth <= 768) {
+                sidebar.classList.remove('open');
+            }
+        });
+
+        // Initialize progress on page load
+        updateProgress();
+    </script>
+</body>
+</html>
