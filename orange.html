@@ -1,0 +1,77 @@
+document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Data for Statistics
+    const statsData = [
+        { id: 'stat1-value', targetValue: 75, suffix: '%', isPercentage: true },
+        { id: 'stat2-value', targetValue: 97, suffix: 'M', isPercentage: false },
+        { id: 'stat3-value', targetValue: 36, suffix: '%', isPercentage: true },
+        { id: 'stat4-value', targetValue: 62, suffix: '%', isPercentage: true }
+    ];
+
+    const animateValue = (objId, start, end, duration, suffix, isPercentage) => {
+        let startTimestamp = null;
+        const obj = document.getElementById(objId);
+        if (!obj) return; // Ensure the element exists
+
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            let currentValue = Math.floor(progress * (end - start) + start);
+
+            if (isPercentage) {
+                obj.textContent = currentValue + suffix;
+            } else {
+                obj.textContent = currentValue + suffix;
+            }
+
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            } else {
+                // Ensure the final value is exactly the target
+                obj.textContent = end + suffix;
+            }
+        };
+        window.requestAnimationFrame(step);
+    };
+
+    // Function to trigger animation when stats section is in view
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    statsData.forEach(stat => {
+                        animateValue(stat.id, 0, stat.targetValue, 2000, stat.suffix, stat.isPercentage);
+                    });
+                    observer.unobserve(entry.target); // Stop observing once animated
+                }
+            });
+        }, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+
+        observer.observe(statsSection);
+    }
+
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Simple interactive element: Hover effect for list items (already in CSS, but JS could add more complex interaction)
+    const listItems = document.querySelectorAll('#features ul li, #next-steps ul li');
+    listItems.forEach(item => {
+        item.addEventListener('mouseover', () => {
+            item.style.transform = 'translateX(5px)';
+            item.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+        });
+        item.addEventListener('mouseout', () => {
+            item.style.transform = 'translateX(0)';
+            item.style.boxShadow = 'none';
+        });
+    });
+});
